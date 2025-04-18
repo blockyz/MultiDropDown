@@ -1,0 +1,66 @@
+@import "variable";
+.inputWrapper {
+  min-width: 300px;
+  position: relative;
+  input {
+    border: 1px solid #ccc;
+    width: 100%;
+    font-size: 14px;
+    box-sizing: border-box;
+    padding: 12px 15px;
+    border-radius: 10px;
+    font-weight: 600;
+    outline: none;
+    &::placeholder {
+      color: #aaa;
+    }
+  }
+}
+.inputWrapperActive {
+  input {
+    border-color: $primary-color;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+}
+.listContainer {
+  position: absolute;
+  width: 100%;
+  border-radius: 10px;
+  background-color: #fff;
+  z-index: 100;
+  max-height: 200px;
+  overflow-y: auto;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  bottom: 0;
+  transform: translateY(105%);
+  padding: 10px 0;
+  margin: 0 0;
+  scrollbar-gutter: stable !important;
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 8px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 8px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: #aaa;
+  }
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 0 4px 0 10px;
+    cursor: pointer;
+    &:hover {
+      background-color: $secondary-color-overlay;
+      color: $primary-color;
+    }
+  }
+}

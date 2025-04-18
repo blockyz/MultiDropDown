@@ -1,20 +1,6 @@
-import { IMultiSelectDataSource } from "./type";
+import { IReducerState, TReducerAction } from "./type";
 
-type Action =
-    | { type: "TOGGLE_LIST"; payload: boolean }
-    | { type: "SET_VALUES"; payload: string[] }
-    | { type: "ADD_VALUE"; payload: string }
-    | { type: "REMOVE_VALUE"; payload: string }
-    | { type: "ADD_DATASOURCE_ITEM"; payload: IMultiSelectDataSource }
-    | { type: "SET_DATASOURCE"; payload: IMultiSelectDataSource[] };
-
-interface State {
-    showList: boolean;
-    valuesState: string[];
-    dSource: IMultiSelectDataSource[];
-}
-
-export const multiSelectReducer = (state: State, action: Action): State => {
+export const multiSelectReducer = (state: IReducerState, action: TReducerAction): IReducerState => {
     switch (action.type) {
         case "TOGGLE_LIST":
             return { ...state, showList: action.payload };
